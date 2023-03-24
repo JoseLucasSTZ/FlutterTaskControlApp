@@ -7,10 +7,10 @@ class InitialScreen extends StatefulWidget {
   const InitialScreen({Key? key}) : super(key: key);
 
   @override
-  State<InitialScreen> createState() => _initialScreen();
+  State<InitialScreen> createState() => _InitialScreen();
 }
 
-class _initialScreen extends State<InitialScreen> {
+class _InitialScreen extends State<InitialScreen> {
     bool opacidade = true;
 
   @override
