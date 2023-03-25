@@ -8,7 +8,9 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreen extends State<FormScreen> {
-TextEditingController nameController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController difficultyController = TextEditingController();
+  TextEditingController imageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +39,62 @@ TextEditingController nameController = TextEditingController();
                       hintText: 'Nome',
                       fillColor: Colors.white70,
                       filled: true,
-                
                     ),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: difficultyController,
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Dificuldade',
+                      fillColor: Colors.white70,
+                      filled: true,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    onChanged:(text){
+                      setState(() {
+                        
+                      });
+                    },
+                    controller: imageController,
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Imagem',
+                      fillColor: Colors.white70,
+                      filled: true,
+                    ),
+                  ),
+                ),
+                Container(
+                    height: 100,
+                    width: 72,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(width: 2, color: Colors.green),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        imageController.text,
+                        fit: BoxFit.cover,
+                      ),
+                    )),
+                ElevatedButton(
+                  onPressed: () {
+                    print(nameController.text);
+                    print(int.parse(difficultyController.text));
+                    print(imageController.text);
+                  },
+                  child: Text("Adicionar"),
                 ),
               ],
             ),
