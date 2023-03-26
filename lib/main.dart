@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test1/screens/Initial_Screen.dart';
 import 'package:flutter_test1/screens/form_screen.dart';
 
+import 'data/task_inherited.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +24,6 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.green,
         ),
-        home: const FormScreen());
+        home: TaskInherited(child: const InitialScreen()));
   }
 }
